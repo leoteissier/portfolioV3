@@ -1,0 +1,237 @@
+<script setup lang="ts">
+import { ref } from 'vue';
+import config from '~/developer.json';
+
+const projects = ref<{}>([]);
+const techs = ref<string[]>([]);
+const filters = ref(['all']);
+const loading = ref(true);
+const isFilterMenuVisible = ref(false);
+
+onMounted(() => {
+  projects.value = config.projects;
+  loading.value = false;
+  techs.value = getUsedTechs();
+})
+
+function getUsedTechs() {
+  const projectArray = config.projects;
+  const techSet = new Set<string>();
+
+  if (Array.isArray(projectArray)) {
+    projectArray.forEach(project => {
+      if (Array.isArray(project.tech)) {
+        project.tech.forEach(tech => techSet.add(tech));
+      }
+    });
+  }
+
+  return Array.from(techSet);
+}
+
+function filterProjects(tech: string) {
+  const allIndex = filters.value.indexOf('all');
+  if (tech === 'all') {
+    filters.value = ['all'];
+  } else {
+    if (allIndex > -1) {
+      filters.value.splice(allIndex, 1); // Retire 'all' si présent
+    }
+    const techIndex = filters.value.indexOf(tech);
+    if (techIndex > -1) {
+      filters.value.splice(techIndex, 1); // Désélectionne la technologie
+    } else {
+      filters.value.push(tech); // Sélectionne la nouvelle technologie
+    }
+  }
+
+  // Si aucun filtre n'est sélectionné, affiche tous les projets
+  if (filters.value.length === 0) {
+    filters.value.push('all');
+  }
+
+  projects.value = filterProjectsBy(filters.value);
+}
+
+
+function filterProjectsBy(filters: string[]) {
+  if (filters.includes('all')) {
+    return config.projects;
+  }
+
+  const projectArray = config.projects;
+  return projectArray.filter(project => {
+    return project.tech.some(tech => filters.includes(tech));
+  });
+}
+
+function isFilterActive(tech: string) {
+  return filters.value.includes(tech);
+}
+
+function fadeDirection() {
+  const directions = ['left', 'right', 'up', 'down'];
+  const direction = directions[Math.floor(Math.random() * directions.length)];
+  return `fade-${direction}`;
+}
+
+function fadeDelay(key: number) {
+  return key * 200;
+}
+</script>
+
+<template>
+  <main v-if="!loading" class="page flex flex-col flex-auto lg:flex-row overflow-hidden">
+
+    <div class="lg:hidden flex justify-start items-center w-full min-h-16 pl-10 text-text text-xl border-bottom">
+      <h2>_projects</h2>
+    </div>
+
+    <!-- section title (mobile) -->
+    <div class="lg:hidden flex items-center bg-border min-h-10 mb-1 pl-10 border-bottom" @click="isFilterMenuVisible = !isFilterMenuVisible">
+      <img alt="" class="section-arrow" src="/svg/arrow.svg">
+      <p class="text-text text-sm ml-2">projects</p>
+    </div>
+
+    <div class="w-full flex-col border-0 text-menu-text lg:flex lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
+      <!-- title -->
+      <div class="hidden lg:flex items-center min-w-full min-h-14 border-bottom px-6 py-2">
+        <img src="/svg/arrow.svg" alt="" class="section-arrow mx-3 rotate-90">
+        <p class="text-text">projects</p>
+      </div>
+
+      <!-- filter menu -->
+      <nav class="hidden lg:block w-full flex-col pl-10 pt-5">
+
+        <div v-for="tech in techs" :key="tech" class="flex items-center py-2">
+          <input type="checkbox" :id="tech" @click="filterProjects(tech)">
+          <img :id="'icon-tech-' + tech" :src="'/svg/techs/' + tech + '.svg'" alt="" class="w-6 h-6 mx-4" :style="{ opacity: isFilterActive(tech) ? 1 : 0.4 }">
+          <span :id="'title-tech-' + tech" class="text-xl" :style="{ opacity: isFilterActive(tech) ? 1 : 0.4 }">{{ tech.charAt(0).toUpperCase() + tech.slice(1) }}</span>
+        </div>
+      </nav>
+
+      <nav v-show="isFilterMenuVisible" class="lg:hidden block w-full flex-col px-10 py-2 border-bottom">
+
+        <div v-for="tech in techs" :key="tech" class="flex items-center py-2">
+          <input type="checkbox" :id="tech" @click="filterProjects(tech)">
+          <img :id="'icon-tech-' + tech" :src="'/svg/techs/' + tech + '.svg'" alt="" class="w-6 h-6 mx-4" :style="{ opacity: isFilterActive(tech) ? 1 : 0.4 }">
+          <span :id="'title-tech-' + tech" class="text-xl" :style="{ opacity: isFilterActive(tech) ? 1 : 0.4 }">{{ tech.charAt(0).toUpperCase() + tech.slice(1) }}</span>
+        </div>
+      </nav>
+    </div>
+
+    <!-- content -->
+
+    <div class="flex flex-grow flex-col w-full overflow-hidden">
+
+      <!-- windows tab -->
+      <div class="w-full min-h-14 hidden lg:flex border-bottom items-center">
+        <div class="flex items-center border-right h-full">
+          <p v-for="filter in filters" :key="filter" class="font-fira_regular text-menu-text px-3">{{ filter }};</p>
+          <img src="/svg/close.svg" alt="" class="m-3">
+        </div>
+      </div>
+
+      <!-- windows tab mobile -->
+      <div class="flex lg:hidden items-center my-4 pl-10">
+        <span class="text-text"> // </span>
+        <p class="text-text px-3">projects</p>
+        <span class="text-menu-text"> / </span>
+        <p v-for="filter in filters" :key="filter" class="text-menu-text px-3">{{ filter }};</p>
+      </div>
+
+      <!-- projects -->
+      <div class="flex flex-wrap justify-between w-full h-full py-4 px-10 lg:p-10 overflow-y-scroll scrollbar">
+
+        <div v-if="projects.length > 0" v-for="(project, key, index) in projects" :key="key" class="w-full mb-4 lg:w-[30%] lg:h-fit" data-aos="fadeDirection()" :data-aos-delay="fadeDelay(key)">
+          <!-- title -->
+          <span class="flex text-sm mb-3">
+            <h3 v-if="index == null" class="text-accent mr-3">Project {{ key + 1 }}</h3>
+            <h3 v-else class="mr-3">Project {{ index + 1 }}</h3>
+            <h4 class="text-menu-text"> // {{ project.title }}</h4>
+          </span>
+
+          <!-- info -->
+          <div class="flex flex-col border border-border rounded-xl">
+            <div class="relative">
+              <div class="absolute flex right-3 top-3">
+                <img v-for="tech in project.tech" :key="tech" :src="'/svg/techs/filled/' + tech + '.svg'" alt="" class="w-6 h-6 mx-1 hover:opacity-75">
+              </div>
+              <img :src="project.img" alt="" class="rounded-t-xl">
+            </div>
+
+            <div class="pb-8 pt-6 px-6 border-top">
+              <p class="text-menu-text mb-5">
+                {{ project.description }}
+              </p>
+              <a :href="project.url" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
+                view-project
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div v-else class="flex flex-col text-menu-text my-5 h-full justify-center items-center">
+          <span class="flex justify-center text-4xl pb-3">
+            X__X
+          </span>
+          <span class="text-text flex justify-center text-xl">
+            No matching projects
+          </span>
+          <span class="flex justify-center">
+            for these technologies
+          </span>
+        </div>
+
+      </div>
+    </div>
+  </main>
+</template>
+
+<style scoped>
+
+input[type="checkbox"] {
+  appearance: none;
+  background-color: transparent;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid currentColor;
+  border-radius: 0.15em;
+  margin-top: 1px;
+}
+
+input[type="checkbox"]:checked {
+  background-color: currentColor;
+  background-image: url("data:image/svg+xml;utf8,<svg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.38587 7.2802L11.9718 0.693573L12.9856 1.70668L5.38587 9.30641L0.826172 4.74671L1.83928 3.73361L5.38587 7.2802Z' fill='white'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+input[type="checkbox"]:checked:hover {
+  box-shadow: #607b968b 0 0 0 2px;
+}
+
+input[type="checkbox"]:not(:checked) {
+  border-color: currentColor;
+}
+
+input[type="checkbox"]:hover {
+  cursor: pointer;
+  background-color: currentColor;
+  background-image: url("data:image/svg+xml;utf8,<svg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'><path d='M5.38587 7.2802L11.9718 0.693573L12.9856 1.70668L5.38587 9.30641L0.826172 4.74671L1.83928 3.73361L5.38587 7.2802Z' fill='white'/></svg>");
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: #607b968b 0 0 0 2px;
+}
+
+input[type="checkbox"]:hover:not(:checked) {
+  cursor: pointer;
+  background-color: rgba(0, 0, 0, 0.1);
+  background-image: none;
+  box-shadow: #607b968b 0 0 0 2px;
+}
+
+input[type="checkbox"]:focus {
+  box-shadow: none;
+}
+</style>

@@ -1,0 +1,115 @@
+{
+    "name": "Léo Teissier",
+    "logo_name": "leo-teissier",
+    "role": "Full-stack developer",
+    "about": {
+        "sections": {
+            "professional-info": {
+                "title": "professional-info",
+                "icon": "/svg/info-professional.svg",
+                "info": {
+                    "experience": {
+                        "title": "experience",
+                        "description": "<br>I did a 10-week internship at InovShop Digital, a company specializing in web development. During this internship, I had the opportunity to create an online media library using JavaScript for back-end and front-end development.<br><br> My main role was to design and implement the necessary functionalities management and sharing of multimedia content. I worked closely with a team of experienced developers to create a friendly and responsive user interface.<br><br> This project allowed me to strengthen my JavaScript skills, deepen my understanding of web architectures and gain hands-on experience in full-stack development. I also learned to work in a professional environment and to meet deadlines and project requirements."
+                    },
+                    "hard-skills": {
+                        "title": "hard-skills",
+                        "description": "<br>As a web developer, I have acquired a solid set of technical skills in different fields. Here are some of my key skills:<br><br>- Programming languages: JavaScript, HTML, CSS<br>- Frameworks: Vuejs, Tailwind<br>- Databases: MySQL, MariaDB<br>- Design and REST API development<br>- Versioning with Git<br>- Debugging and performance optimization<br><br>I am passionate about continuous learning and am constantly on the lookout for new technologies and best practices web development."
+                    },
+                    "soft-skills": {
+                        "title": "soft-skills",
+                        "description": "<br>In addition to my technical skills, I have developed a set of soft skills that are valuable in a professional environment. Here are some of my soft skills:<br><br>- Effective communication: I am able to communicate clearly and concisely with my colleagues and clients.<br>- Team player: I am comfortable to work in a team, share my ideas and collaborate to achieve common goals.<br>- Problem solving: I am able to analyze problems, propose solutions and implement them effectively.<br> - Time management: I am organized, able to manage priorities and meet deadlines.<br>- Adaptability: I am open to change, able to adapt quickly to new situations and meet new challenges with flexibility ."
+                    }
+                }
+            },
+            "personal-info": {
+                "title": "personal-info",
+                "icon": "/svg/info-personal.svg",
+                "info": {
+                    "bio": {
+                        "title": "bio",
+                        "description": "<br>I have 3 years of experience in web development and I am passionate about creating innovative and functional web applications. My background has allowed me to work on various projects, ranging from corporate websites to complex web applications.<br><br>I particularly enjoy the creative aspect of web development, where I can bring to life ideas and deliver exceptional user experiences. I am constantly looking for new technologies and best practices to improve my skills and stay up to date in an ever-changing field.<br><br>Apart from web development, I like to explore other areas of web development. information technology such as cybersecurity, which allows me to understand the challenges of protecting systems and online data."
+                    },
+                    "interests": {
+                        "title": "interests",
+                        "description": "<br>I am passionate about continuous learning and enjoy immersing myself in new topics. Here are some of my interests:<br><br>- Cybersecurity: In addition to web development, I also train in cybersecurity to gain a better understanding of online threats and protection strategies.<br>- Street Workout: I developed an interest in street workout, which combines fitness and calisthenics. I enjoy taking on new physical challenges and improving my strength and fitness.<br>- Video games: I enjoy video games, especially Valorant. I like the competitive and strategic aspect of online games, which allows me to relax and have fun."
+                    },
+                    "education": {
+                        "title": "education",
+                        "description": "<br>The IUT of Troyes - 3rd year GOAL MMI (Multimedia and Internet Professions): I studied at the IUT of Troyes where I followed a course focused on web development, communication and management of multimedia projects. I have acquired extensive knowledge in web programming, user interface design and database management.<br><br>I am also always looking for additional learning opportunities, whether through through online courses, tutorials or participation in open source projects. I aspire to continue to expand my knowledge and skills in the field of web development and cybersecurity."
+                    }
+                }
+            },
+            "hobbies-info": {
+                "title": "hobbies-info",
+                "icon": "/svg/info-hobbies.svg",
+                "info": {
+                    "sports": {
+                        "title": "sports",
+                        "description": "<br>I am a sports enthusiast and enjoy maintaining an active and healthy lifestyle. Here are some of my sports interests:<br><br>- Street Workout: I am fascinated by street workout, a discipline that combines strength, agility and creativity. I like to train using my own body weight and push my limits by doing calisthenic exercises.<br>- Football: I am also a big fan of football and enjoy watching and playing the sport. It's a great way to have fun and keep fit at the same time."
+                    },
+                    "favorite-games": {
+                        "title": "favorite-games",
+                        "description": "<br>I am a video game enthusiast and I like to spend time playing different titles. Here are some of my favorite games:<br><br>- Valorant: Valorant is one of my games I enjoy the tactical and competitive aspect of this first-person shooter, and I like to compete against other players online.<br>- Sekiro: Shadows Die Twice: I also have a lot loved Sekiro: Shadows Die Twice. This action-adventure game offers challenging challenge with intense combat and captivating atmosphere.<br>- Elite Dangerous: Elite Dangerous is a space simulation game that offers an immersive experience in the I enjoy exploring the vast expanses of the galaxy, trading and participating in epic space battles."
+                    }
+
+                }
+            }
+        }
+    },
+    "contacts": {
+        "direct": {
+            "title": "contacts",
+            "sources": {
+                "email": "leo.teissier@numericable.fr",
+                "phone": "+33782869496"
+            }
+        },
+        "social": {
+            "github": {
+                "title": "Github profile",
+                "url": "https://github.com",
+                "user": "leoteissier"
+            },
+            "linkedin": {
+                "title": "LinkedIn profile",
+                "url": "https://www.linkedin.com/in",
+                "user": "léo-teissier"
+            }
+        }
+    },
+    "gists": {
+        "1": "2fda599b2fb0fe1896cec8b0d34c9f78",
+        "2": "30ba0e6fc356c7b32a29331d44502990"
+    },
+    "projects": [
+        {
+            "title": "_Weather App",
+            "description": "My weather app is a simple and user-friendly application that provides real-time weather updates for any location.",
+            "img": "/images/projects/weatherApp.png",
+            "tech": ["javascript"],
+            "url": "https://weatherapp.leoteissier.fr"
+        },
+        {
+            "title": "_Snake Game",
+            "description": "Here you will find a classic snake game, could you finish this game ?",
+            "img": "/images/projects/snakeGame.png",
+            "tech": ["vuejs"],
+            "url": "https://snakegame.leoteissier.fr"
+        },
+        {
+            "title": "_Periodic Table",
+            "description": "Here is a periodic table, you can find all the elements of the periodic table.",
+            "img": "/images/projects/periodicTable.png",
+            "tech": ["vuejs"],
+            "url": "https://periodic-table.leoteissier.fr"
+        },
+        {
+            "title": "_World of tanks",
+            "description": "Here is a tank game, but also a race against time. Play you will understand.",
+            "img": "/images/projects/worldOfTanks.png",
+            "tech": ["unity"],
+            "url": "https://worldoftanks.leoteissier.fr"
+        }
+    ]
+}
