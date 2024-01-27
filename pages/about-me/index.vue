@@ -58,7 +58,7 @@ onMounted(() => {
 <template>
   <main v-if="!loading" class="page flex flex-col lg:flex-row">
 
-    <div class="flex w-full h-fit lg:max-w-80 lg:min-w-80 lg:h-full">
+    <div data-aos="fade-right" class="flex w-full h-fit lg:max-w-80 lg:min-w-80 lg:h-full">
 
       <!-- DESKTOP section icons -->
       <div class="hidden lg:flex flex-col items-center w-1/4 border-right">
@@ -126,7 +126,7 @@ onMounted(() => {
                 <p :id="folder.title" v-html="key" :class="{ active: isActive(folder.title)}"></p>
               </div>
               <div v-if="folder.files !== undefined" class="col-span-2">
-                <div v-for="(file, key) in folder.files" :key="key" class="hover:text-text hover:cursor-pointer flex my-2">
+                <div v-for="key in folder.files" :key="key" class="hover:text-text hover:cursor-pointer flex my-2">
                   <img src="/svg/markdown.svg" alt="" class="ml-8 mr-3"/>
                   <p >{{ key }}</p>
                 </div>
@@ -162,7 +162,7 @@ onMounted(() => {
       <div id="left" class="w-full h-full flex flex-col border-right">
 
         <!-- windows tab desktop -->
-        <div class="lg:flex hidden items-center tab-height w-full min-h-14 border-bottom">
+        <div data-aos="fade-left" class="lg:flex hidden items-center tab-height w-full min-h-14 border-bottom">
           <div class="flex items-center border-right h-full">
             <p v-html="config.about.sections[currentSection].title" class=" text-menu-text px-3"></p>
             <img src="/svg/close.svg" alt="" class="mx-3">
@@ -178,10 +178,10 @@ onMounted(() => {
         </div>
 
         <!-- text -->
-        <div class="flex flex-grow w-full lg:border-right">
+        <div data-aos="fade-up" class="flex flex-grow w-full lg:border-right">
 
           <div class="w-full max-h-full mx-10 overflow-y-scroll scrollbar">
-            <p data-aos="fade-down" data-aos-delay="500" v-html="config.about.sections[currentSection].info[folder].description"></p>
+            <p data-aos="fade-down" data-aos-delay="300" v-html="config.about.sections[currentSection].info[folder].description"></p>
           </div>
 
           <!-- scroll bar -->
@@ -196,7 +196,7 @@ onMounted(() => {
       <div id="right" class="hidden lg:flex flex-col max-w-full">
 
         <!-- windows tab -->
-        <div class="items-center tab-height w-full min-h-14 lg:flex border-bottom">
+        <div data-aos="fade-left" class="items-center tab-height w-full min-h-14 lg:flex border-bottom">
 
         </div>
 
@@ -205,7 +205,7 @@ onMounted(() => {
 
         </div>
 
-        <div class="flex h-full">
+        <div data-aos="fade-up" class="flex h-full">
 
           <div v-if="!hasError" class="flex flex-col lg:px-6 lg:py-4 w-full overflow-hidden">
             <!-- title -->
@@ -213,7 +213,7 @@ onMounted(() => {
 
             <div class="flex flex-col overflow-y-scroll scrollbar">
               <!-- snippets -->
-              <GistSnippet v-for="(gist, key) in config.gists" :key="key" :id="gist" @error="handleError" />
+              <GistSnippet data-aos="fade-down" :data-aos-delay="200 * key" v-for="(gist, key) in config.gists" :key="key" :id="gist" @error="handleError" />
             </div>
           </div>
           <div v-else>

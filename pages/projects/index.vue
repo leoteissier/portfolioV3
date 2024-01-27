@@ -93,7 +93,7 @@ function fadeDelay(key: number) {
       <p class="text-text text-sm ml-2">projects</p>
     </div>
 
-    <div class="w-full flex-col border-0 text-menu-text lg:flex lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
+    <div data-aos="fade-right" class="w-full flex-col border-0 text-menu-text lg:flex lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
       <!-- title -->
       <div class="hidden lg:flex items-center min-w-full min-h-14 border-bottom px-6 py-2">
         <img src="/svg/arrow.svg" alt="" class="section-arrow mx-3 rotate-90">
@@ -125,7 +125,7 @@ function fadeDelay(key: number) {
     <div class="flex flex-grow flex-col w-full overflow-hidden">
 
       <!-- windows tab -->
-      <div class="w-full min-h-14 hidden lg:flex border-bottom items-center">
+      <div data-aos="fade-left" class="w-full min-h-14 hidden lg:flex border-bottom items-center">
         <div class="flex items-center border-right h-full">
           <p v-for="filter in filters" :key="filter" class="font-fira_regular text-menu-text px-3">{{ filter }};</p>
           <img src="/svg/close.svg" alt="" class="m-3">
@@ -141,9 +141,9 @@ function fadeDelay(key: number) {
       </div>
 
       <!-- projects -->
-      <div class="flex flex-wrap justify-between w-full h-full py-4 px-10 lg:p-10 overflow-y-scroll scrollbar">
+      <div data-aos="fade-up"  class="flex flex-wrap justify-between w-full h-full py-4 px-10 lg:p-10 overflow-y-scroll scrollbar">
 
-        <div v-if="projects.length > 0" v-for="(project, key, index) in projects" :key="key" class="w-full mb-4 lg:w-[30%] lg:h-fit" data-aos="fadeDirection()" :data-aos-delay="fadeDelay(key)">
+        <div v-if="projects.length > 0" v-for="(project, key, index) in projects" :key="key" class="w-full mb-4 lg:w-[30%] lg:h-fit" :data-aos="fadeDirection()" :data-aos-delay="fadeDelay(key)">
           <!-- title -->
           <span class="flex text-sm mb-3">
             <h3 v-if="index == null" class="text-accent mr-3">Project {{ key + 1 }}</h3>

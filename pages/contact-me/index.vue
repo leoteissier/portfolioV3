@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref, onMounted } from 'vue';
+import { ref } from 'vue';
 import config from "~/developer.json";
 const contact = config.contacts;
 
@@ -28,7 +28,7 @@ const updateMessage = (newMessage: string) => {
         <h2>_contact-me</h2>
       </div>
 
-      <div class="flex flex-col w-full h-fit lg:h-full border-0 lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
+      <div data-aos="fade-right" class="flex flex-col w-full h-fit lg:h-full border-0 lg:max-w-80 lg:min-w-80 lg:border-border lg:border-r">
 
         <!-- contacts -->
         <div id="contacts" class="flex flex-col">
@@ -62,7 +62,7 @@ const updateMessage = (newMessage: string) => {
         <!-- windows tab -->
         <div class="w-full hidden lg:flex min-h-14 border-right border-bottom items-center">
 
-          <div class="flex items-center border-right h-full">
+          <div data-aos="fade-left" class="flex items-center border-right h-full">
             <p class="text-menu-text px-3">contacts</p>
             <img src="/svg/close.svg" alt="" class="m-3">
           </div>
@@ -70,7 +70,7 @@ const updateMessage = (newMessage: string) => {
         </div>
 
         <!-- main -->
-        <div class="flex lg:grid lg:grid-cols-2 h-full w-full">
+        <div data-aos="fade-up" class="flex lg:grid lg:grid-cols-2 h-full w-full">
 
           <div id="left" class="h-full w-full flex flex-col items-center p-16 border-0 lg:border-border lg:border-r">
 
@@ -81,6 +81,8 @@ const updateMessage = (newMessage: string) => {
                 @update:email="updateEmail"
                 @update:subject="updateSubject"
                 @update:message="updateMessage"
+                data-aos="fade-down"
+                data-aos-delay="500"
             />
 
           </div>
@@ -88,7 +90,13 @@ const updateMessage = (newMessage: string) => {
           <div id="right" class="h-full w-full hidden lg:flex">
 
             <div class="w-full p-16">
-              <FormContentCode :email="email" :subject="subject" :message="message" />
+              <FormContentCode
+                  :email="email"
+                  :subject="subject"
+                  :message="message"
+                  data-aos="fade-down"
+                  data-aos-delay="500"
+              />
             </div>
             <!-- scroll bar -->
             <div class="min-w-8 h-full border-left hidden lg:flex justify-center py-1">

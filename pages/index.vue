@@ -29,7 +29,7 @@ onBeforeUnmount(() => {
     <div v-show="!menuOpen" class="css-blurry-gradient-blue"></div>
     <div v-show="!menuOpen" class="css-blurry-gradient-green"></div>
 
-    <section class="flex flex-col w-full justify-center xl:pl-64 lg:pl-32 md:pl-16 pl-8">
+    <section data-aos="fade-right" class="flex flex-col w-full justify-center xl:pl-64 lg:pl-32 md:pl-16 pl-8">
       <div class="head pb-[3rem]">
                 <span class="block text-xl leading-none text-[#E5E9F0]">
                     Hi all, I am
@@ -66,7 +66,7 @@ onBeforeUnmount(() => {
       </div>
     </section>
 
-    <section class="game flex flex-col w-full h-full justify-center z-50" v-if="!isMobile">
+    <section data-aos="fade-up" class="game flex flex-col w-full h-full justify-center z-50" v-if="!isMobile">
       <SnakeGame />
     </section>
   </main>

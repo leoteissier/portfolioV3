@@ -4,6 +4,7 @@ const siteTitle = `${config.name} | ${config.role}`
 export default defineNuxtConfig({
     modules: [
         '@nuxtjs/tailwindcss',
+        'nuxt-aos'
     ],
     app: {
         head: {
