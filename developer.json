@@ -10,15 +10,15 @@
                 "info": {
                     "experience": {
                         "title": "experience",
-                        "description": "<br>I did a 10-week internship at InovShop Digital, a company specializing in web development. During this internship, I had the opportunity to create an online media library using JavaScript for back-end and front-end development.<br><br> My main role was to design and implement the necessary functionalities management and sharing of multimedia content. I worked closely with a team of experienced developers to create a friendly and responsive user interface.<br><br> This project allowed me to strengthen my JavaScript skills, deepen my understanding of web architectures and gain hands-on experience in full-stack development. I also learned to work in a professional environment and to meet deadlines and project requirements."
+                        "description": "<br>I have 3 years of experience in web development, during which I have worked on various projects ranging from corporate websites to complex web applications. Here are some of my key experiences:<br><br>- InovShop Digital: During a 10-week internship at InovShop Digital, a web development company, I developed an online media library using JavaScript for both front-end and back-end development. My primary responsibilities included designing and implementing features for managing and sharing multimedia content, collaborating with experienced developers to craft a user-friendly interface. This experience enhanced my JavaScript abilities, provided insight into web architectures, and offered practical full-stack development experience, alongside learning professional work ethic and adherence to project deadlines.<br><br>- Ministère des Armées: During my six-month internship at the Ministry of the Armed Forces, I designed and implemented a user interface (UI) for remote management systems. This project involved in-depth research and application of advanced programming techniques to ensure the UI was both intuitive and efficient, catering to the specific needs of defense operations. My work contributed significantly to enhancing the operability and user experience of the remote management system, allowing for more effective control and monitoring. This experience not only honed my technical skills in UI design but also deepened my understanding of its application in critical defense infrastructure."
                     },
                     "hard-skills": {
                         "title": "hard-skills",
-                        "description": "<br>As a web developer, I have acquired a solid set of technical skills in different fields. Here are some of my key skills:<br><br>- Programming languages: JavaScript, HTML, CSS<br>- Frameworks: Vuejs, Tailwind<br>- Databases: MySQL, MariaDB<br>- Design and REST API development<br>- Versioning with Git<br>- Debugging and performance optimization<br><br>I am passionate about continuous learning and am constantly on the lookout for new technologies and best practices web development."
+                        "description": "<br>As a full-stack developer, I have acquired a diverse set of technical skills that allow me to create innovative and functional web applications. Here are some of my hard skills:<br><br>- Programming languages: JavaScript, PHP, Python, Rust, C, HTML, CSS<br>- Frameworks: Vuejs, React, Tailwind, Nuxt.js, Symfony, Express.js, Angular, Django<br>- Databases: MySQL, MariaDB<br>- Design and REST/GraphQL API development: Postman, Swagger<br>- Versioning with Git: Git, Github, Gitlab<br>- Debugging and performance optimization: Chrome DevTools, Lighthouse, WebPageTest"
                     },
                     "soft-skills": {
                         "title": "soft-skills",
-                        "description": "<br>In addition to my technical skills, I have developed a set of soft skills that are valuable in a professional environment. Here are some of my soft skills:<br><br>- Effective communication: I am able to communicate clearly and concisely with my colleagues and clients.<br>- Team player: I am comfortable to work in a team, share my ideas and collaborate to achieve common goals.<br>- Problem solving: I am able to analyze problems, propose solutions and implement them effectively.<br> - Time management: I am organized, able to manage priorities and meet deadlines.<br>- Adaptability: I am open to change, able to adapt quickly to new situations and meet new challenges with flexibility ."
+                        "description": "<br>In addition to my technical skills, I have developed a range of soft skills that are essential for effective collaboration and project management. Here are some of my soft skills:<br><br>- Effective communication: Clear and concise communication with colleagues and clients<br>- Team player: Collaboration and sharing of ideas with team members<br>- Problem solving: Analysis of problems, proposal of solutions and effective implementation<br>- Time management: Organization, priority management and meeting deadlines<br>- Adaptability: Openness to change, quick adaptation to new situations and flexibility in facing new challenges"
                     }
                 }
             },
@@ -36,7 +36,7 @@
                     },
                     "education": {
                         "title": "education",
-                        "description": "<br>The IUT of Troyes - 3rd year GOAL MMI (Multimedia and Internet Professions): I studied at the IUT of Troyes where I followed a course focused on web development, communication and management of multimedia projects. I have acquired extensive knowledge in web programming, user interface design and database management.<br><br>I am also always looking for additional learning opportunities, whether through through online courses, tutorials or participation in open source projects. I aspire to continue to expand my knowledge and skills in the field of web development and cybersecurity."
+                        "description": "<br>Following my studies at the IUT of Troyes in the 3rd year GOAL MMI (Multimedia and Internet Professions), where I focused on web development, communication, and multimedia project management, I have acquired extensive knowledge in web programming, user interface design, and database management.<br><br>Always eager to enhance my learning, I engage in online courses, tutorials, and contribute to open source projects, aiming to broaden my expertise in web development and delve into cybersecurity.<br><br>To further this ambition, I am set to join the 'École 2600', embarking on a three-year program to earn a title as an Expert in Data Security, Systems, and Networks (RNCP Level 7 / Bac+5). This step represents my commitment to advancing in the cybersecurity field, reflecting my dedication to continuous learning and professional development."
                     }
                 }
             },
@@ -75,6 +75,14 @@
                 "title": "LinkedIn profile",
                 "url": "https://www.linkedin.com/in",
                 "user": "léo-teissier"
+            },
+            "hackthebox": {
+                "title": "Hack The Box profile",
+                "url": "https://www.hackthebox.eu/",
+                "profil": "https://www.hackthebox.com/home/users/profile/",
+                "user": "acsioses",
+                "id": "1527394",
+                "rank": "Noob"
             }
         }
     },

@@ -63,6 +63,26 @@ onBeforeUnmount(() => {
             "https://github.com/{{ config.contacts.social.github.user }}"
           </a>
         </p>
+        <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': isMobile }">
+                    // you can also see it on my HackTheBox page
+                </span>
+        <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
+                    // find my profile on HackTheBox:
+                </span>
+        <p class="code text-[#E5E9F0]">
+                    <span class="text-[#4D5BCE]">
+                        const
+                    </span>
+          <span class="text-[#43D9AD]">
+                        hacktheboxLink
+                    </span>
+          <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
+            // find my profile on HackTheBox:
+            </span>
+          <a class="text-[#E99287] underline underline-offset-4" :href="config.contacts.social.hackthebox.profil + config.contacts.social.hackthebox.id">
+            "{{ config.contacts.social.hackthebox.url }}{{ config.contacts.social.hackthebox.user }}"
+          </a>
+        </p>
       </div>
     </section>
 
