@@ -111,13 +111,6 @@
             "img": "/images/projects/periodicTable.png",
             "tech": ["vuejs"],
             "url": "https://periodic-table.leoteissier.fr"
-        },
-        {
-            "title": "_World of tanks",
-            "description": "Here is a tank game, but also a race against time. Play you will understand.",
-            "img": "/images/projects/worldOfTanks.png",
-            "tech": ["unity"],
-            "url": "https://worldoftanks.leoteissier.fr"
         }
     ]
 }
