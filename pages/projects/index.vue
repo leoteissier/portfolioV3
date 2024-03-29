@@ -53,6 +53,7 @@ function filterProjects(tech: string) {
   projects.value = filterProjectsBy(filters.value);
 }
 
+const filtersKey = computed(() => filters.value.join(','));
 
 function filterProjectsBy(filters: string[]) {
   if (filters.includes('all')) {
@@ -141,35 +142,49 @@ function fadeDelay(key: number) {
       </div>
 
       <!-- projects -->
-      <div data-aos="fade-up"  class="flex flex-wrap justify-between w-full h-full py-4 px-10 lg:p-10 overflow-y-scroll scrollbar">
+      <div data-aos="fade-up"  class="flex flex-wrap justify-evenly w-full h-full py-4 px-10 lg:p-10 overflow-y-scroll scrollbar">
 
-        <div v-if="projects.length > 0" v-for="(project, key, index) in projects" :key="key" class="w-full mb-4 lg:w-[30%] lg:h-fit" :data-aos="fadeDirection()" :data-aos-delay="fadeDelay(key)">
-          <!-- title -->
-          <span class="flex text-sm mb-3">
-            <h3 v-if="index == null" class="text-accent mr-3">Project {{ key + 1 }}</h3>
-            <h3 v-else class="mr-3">Project {{ index + 1 }}</h3>
-            <h4 class="text-menu-text"> // {{ project.title }}</h4>
-          </span>
+        <transition-group v-if="projects.length > 0" name="fade" tag="div" :key="filtersKey" class="flex flex-wrap justify-evenly">
 
-          <!-- info -->
-          <div class="flex flex-col border border-border rounded-xl">
-            <div class="relative">
-              <div class="absolute flex right-3 top-3">
-                <img v-for="tech in project.tech" :key="tech" :src="'/svg/techs/filled/' + tech + '.svg'" alt="" class="w-6 h-6 mx-1 hover:opacity-75">
+          <div v-for="(project, key) in projects" :key="key" class="w-full mb-4 lg:w-[30%] lg:h-fit" :data-aos="fadeDirection()" :data-aos-delay="fadeDelay(key)">
+            <!-- title -->
+            <span class="flex text-sm mb-3">
+              <h3 class="text-accent mr-3">Project {{ key + 1 }}</h3>
+              <h4 class="text-menu-text"> // {{ project.title }}</h4>
+            </span>
+
+            <!-- info -->
+            <div class="flex flex-col border border-border rounded-xl">
+              <div class="relative">
+                <div class="absolute flex right-3 top-3">
+                  <img v-for="tech in project.tech" :key="tech" :src="'/svg/techs/filled/' + tech + '.svg'" alt="" class="w-6 h-6 mx-1 hover:opacity-75">
+                </div>
+                <img v-if="project.img" :src="project.img" alt="" class="rounded-t-xl">
+                <div v-else class="in-progess-background rounded-t-xl"></div>
               </div>
-              <img :src="project.img" alt="" class="rounded-t-xl">
-            </div>
 
-            <div class="pb-8 pt-6 px-6 border-top">
-              <p class="text-menu-text mb-5">
-                {{ project.description }}
-              </p>
-              <a :href="project.url" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
-                view-project
-              </a>
+              <div class="pb-8 pt-6 px-6 border-top">
+                <p class="text-menu-text mb-5">
+                  {{ project.description }}
+                </p>
+                <div class="flex justify-between">
+                  <a v-if="project.url != ''" :href="project.url" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
+                    view-project
+                  </a>
+
+                  <p v-else class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg">
+                    work-in-progress
+                  </p>
+
+                  <a v-if="project.github" :href="project.github" target="_blank" class="bg-border hover:bg-secondary-dark text-text py-2 px-4 w-fit rounded-lg ml-2">
+                    view-github
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
-        </div>
+
+        </transition-group>
 
         <div v-else class="flex flex-col text-menu-text my-5 h-full justify-center items-center">
           <span class="flex justify-center text-4xl pb-3">
@@ -189,6 +204,11 @@ function fadeDelay(key: number) {
 </template>
 
 <style scoped>
+
+.in-progess-background {
+  background: linear-gradient(180deg, #1a202c 0%, #2d3748 100%);
+  height: 150px;
+}
 
 input[type="checkbox"] {
   appearance: none;

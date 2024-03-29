@@ -92,25 +92,28 @@
     },
     "projects": [
         {
-            "title": "_Weather App",
-            "description": "My weather app is a simple and user-friendly application that provides real-time weather updates for any location.",
-            "img": "/images/projects/weatherApp.png",
-            "tech": ["javascript"],
-            "url": "https://weatherapp.leoteissier.fr"
-        },
-        {
             "title": "_Snake Game",
             "description": "Here you will find a classic snake game, could you finish this game ?",
             "img": "/images/projects/snakeGame.png",
             "tech": ["vuejs"],
-            "url": "https://snakegame.leoteissier.fr"
+            "url": "https://snakegame.leoteissier.fr",
+            "github": "https://github.com/leoteissier/snakegame"
         },
         {
             "title": "_Periodic Table",
             "description": "Here is a periodic table, you can find all the elements of the periodic table.",
             "img": "/images/projects/periodicTable.png",
             "tech": ["vuejs"],
-            "url": "https://periodic-table.leoteissier.fr"
+            "url": "https://periodic-table.leoteissier.fr",
+            "github": "https://github.com/leoteissier/periodicTable"
+        },
+        {
+            "title": "_Solar System",
+            "description": "Here is a solar system, you can find all the planets of the solar system on 3D.",
+            "img": "",
+            "tech": ["react", "threejs"],
+            "url": "",
+            "github": ""
         }
     ]
 }
