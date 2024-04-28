@@ -94,7 +94,7 @@
         {
             "title": "_Snake Game",
             "description": "Here you will find a classic snake game, could you finish this game ?",
-            "img": "/images/projects/snakeGame.png",
+            "img": "/images/projects/snake-game.png",
             "tech": ["vuejs"],
             "url": "https://snakegame.leoteissier.fr",
             "github": "https://github.com/leoteissier/snakegame"
@@ -102,7 +102,7 @@
         {
             "title": "_Periodic Table",
             "description": "Here is a periodic table, you can find all the elements of the periodic table.",
-            "img": "/images/projects/periodicTable.png",
+            "img": "/images/projects/periodic-table.png",
             "tech": ["vuejs"],
             "url": "https://periodic-table.leoteissier.fr",
             "github": "https://github.com/leoteissier/periodicTable"
@@ -110,10 +110,10 @@
         {
             "title": "_Solar System",
             "description": "Here is a solar system, you can find all the planets of the solar system on 3D.",
-            "img": "",
+            "img": "/images/projects/solar-system-explorer.png",
             "tech": ["react", "threejs"],
-            "url": "",
-            "github": ""
+            "url": "https://solar-system-explorer.leoteissier.fr/",
+            "github": "https://github.com/leoteissier/solar-system-explorer"
         }
     ]
 }
