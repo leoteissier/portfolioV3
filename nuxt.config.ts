@@ -2,6 +2,10 @@ import config from "./developer.json";
 const siteTitle = `${config.name} | ${config.role}`
 
 export default defineNuxtConfig({
+    devServer: {
+        host: '0.0.0.0',
+        port: 3000
+    },
     modules: [
         '@nuxtjs/tailwindcss',
         'nuxt-aos'

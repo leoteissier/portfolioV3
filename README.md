@@ -8,7 +8,7 @@ This is my personal portfolio website, crafted by me, <a href="https://github.co
 **Client:** Nuxt3, TailwindCSS
 
 
-## Run Locally
+## Construire l'image Docker
 
 Clone the project
 
@@ -19,21 +19,20 @@ Clone the project
 Go to the project directory
 
 ```bash
-  cd portfoliov2
+  cd portfolio
 ```
 
-Install dependencies
+Crée l'image docker
 
 ```bash
-  npm install
+docker build -t portfolio .
 ```
 
-Start the server
+Lancer le docker container avec l'auto-reload activer
 
 ```bash
-  npm run start
+docker run --name portfolio -v "$(pwd):/app" -v /app/node_modules -p 3000:3000 portfolio
 ```
-
 
 ## Authors
 
