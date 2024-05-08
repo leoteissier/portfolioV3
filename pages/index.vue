@@ -1,5 +1,6 @@
 <script setup>
 import { ref, onMounted, onBeforeUnmount } from 'vue';
+import SnakeGame from "~/components/SnakeGame.vue";
 import config from "~/developer.json";
 import { useMenuState } from '~/storages/useMenuState';
 import { checkIfMobile } from "~/utils/is-mobile";
@@ -74,13 +75,13 @@ onBeforeUnmount(() => {
                         const
                     </span>
           <span class="text-[#43D9AD]">
-                        hacktheboxLink
+                        TryHackMeLink
                     </span>
           <span class="text-l leading-none text-[#607B96]" :class="{ 'hidden': !isMobile }">
-            // find my profile on HackTheBox:
+            // find my profile on TryHackMe:
             </span>
-          <a class="text-[#E99287] underline underline-offset-4" :href="config.contacts.social.hackthebox.profil + config.contacts.social.hackthebox.id">
-            "{{ config.contacts.social.hackthebox.url }}{{ config.contacts.social.hackthebox.user }}"
+          <a class="text-[#E99287] underline underline-offset-4" :href="config.contacts.social.tryhackme.url + '/' + config.contacts.social.tryhackme.user">
+            "{{ config.contacts.social.tryhackme.url }}/{{ config.contacts.social.tryhackme.user }}"
           </a>
         </p>
       </div>
