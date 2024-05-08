@@ -76,13 +76,10 @@
                 "url": "https://www.linkedin.com/in",
                 "user": "léo-teissier"
             },
-            "hackthebox": {
-                "title": "Hack The Box profile",
-                "url": "https://www.hackthebox.eu/",
-                "profil": "https://www.hackthebox.com/home/users/profile/",
-                "user": "acsioses",
-                "id": "1527394",
-                "rank": "Noob"
+            "tryhackme": {
+                "title": "Try Hack Me profile",
+                "url": "https://tryhackme.com/p",
+                "user": "leo.teissier"
             }
         }
     },
